@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include <string.h>
+#include "iterator.hpp"
 class Add: public Base{
 	private:
 		double lef;
@@ -25,6 +26,10 @@ class Add: public Base{
                         finals = lefts + " + " + rights;
                         return finals;
                 }
+
+        Iterator* create_iterator(){
+            return Iterator* it = new Iterator(Add* ptr);
+        }
 
 };
 
