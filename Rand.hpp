@@ -3,9 +3,6 @@
 #include "base.hpp"
 #include <string>
 class Rand: public Base { 
-    private:
-        Base* leftnode;
-        Base* rightnode;
     public:
     double value1;
   

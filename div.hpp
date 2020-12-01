@@ -17,6 +17,8 @@ class Div : public Base {
 
         public:
                 Div(Base* left, Base* right) : Base() {
+                        leftnode = left;
+                        rightnode = right;
                          ri = right->evaluate();
                          le = left->evaluate();
 			                top =left->stringify();

@@ -7,6 +7,8 @@
 class Pow: public Base{
         public:
                 Pow(Base* left, Base* right) : Base(){
+                    leftnode = left;
+                    rightnode = right;
 			num= left->evaluate();
 			exp = right->evaluate();
 			lefts = left->stringify();
