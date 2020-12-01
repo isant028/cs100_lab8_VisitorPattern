@@ -3,6 +3,9 @@
 #include "base.hpp"
 #include <string>
 class Rand: public Base { 
+    private:
+        Base* leftnode;
+        Base* rightnode;
     public:
     double value1;
   
@@ -11,6 +14,20 @@ class Rand: public Base {
        virtual double evaluate()  {return value1;} 
         virtual std::string stringify()
         {return std::to_string(value1);}
+
+
+        Iterator* create_iterator(){
+                Iterator* it = new NullIterator(this);
+                return it;
+        }
+
+        Base* get_left(){
+            return nullptr;
+        }
+
+        Base* get_right(){
+            return nullptr;
+        }
 };
 
 #endif //__RAND_HPP__
