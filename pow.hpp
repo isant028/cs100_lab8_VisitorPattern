@@ -38,6 +38,10 @@ class Pow: public Base{
         Base* get_right(){
             return this->rightnode;
         }
+
+        void accept(CountVisitor* myvisitor){
+            myvisitor->visit_pow();
+        }
         private:
 		std::string lefts;
 		std::string rights;

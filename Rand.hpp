@@ -25,6 +25,10 @@ class Rand: public Base {
         Base* get_right(){
             return nullptr;
         }
+
+        void accept(CountVisitor* myvisitor){
+            myvisitor->visit_rand();
+        }
 };
 
 #endif //__RAND_HPP__

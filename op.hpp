@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include "iterator.hpp"
 #include <string>
+#include "visitor.hpp"
 
 class Op : public Base {
     public:
@@ -24,6 +25,10 @@ class Op : public Base {
 
         virtual Base* get_right(){
             return nullptr;
+        }
+
+        void accept(CountVisitor* myvisitor){
+            myvisitor->visit_op();
         }
    private:
 	double val;

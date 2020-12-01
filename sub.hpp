@@ -43,6 +43,9 @@ class Sub: public Base{
         Base* get_right(){
             return this->rightnode;
         }
+        void accept(CountVisitor* myvisitor){
+            myvisitor->visit_sub();
+        }
 
 };
 

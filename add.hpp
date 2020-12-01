@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include <string.h>
+#include "visitor.hpp"
 //#include "iterator.hpp"
 class Add: public Base{
 	private:
@@ -42,6 +43,10 @@ class Add: public Base{
 
         Base* get_right(){
             return this->rightnode;
+        }
+
+        void accept(CountVisitor* myvisitor){
+            myvisitor->visit_add();
         }
 
 };
