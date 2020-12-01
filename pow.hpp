@@ -23,12 +23,27 @@ class Pow: public Base{
                        finals = lefts + "**" + rights;
                         return finals;
                 }
+
+            Iterator* create_iterator(){
+                     Iterator* it = new BinaryIterator(this);
+                return it;
+        }
+
+        Base* get_left(){
+            return this->leftnode;
+        }
+
+        Base* get_right(){
+            return this->rightnode;
+        }
         private:
 		std::string lefts;
 		std::string rights;
                 std::string finals;
 		double num;
 		double exp;
+        Base* leftnode;
+        Base* rightnode;
 };
 
 #endif

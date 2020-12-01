@@ -9,6 +9,8 @@ class Div : public Base {
         private:
                 double ri;
                 double le;
+                Base* leftnode;
+                Base* rightnode;
                 std::string top;
                 std::string bot;
                 std::string divi;
@@ -17,8 +19,8 @@ class Div : public Base {
                 Div(Base* left, Base* right) : Base() {
                          ri = right->evaluate();
                          le = left->evaluate();
-			top =left->stringify();
-			bot = right->stringify();
+			                top =left->stringify();
+			                bot = right->stringify();
                 }
 
                 double evaluate()
@@ -31,6 +33,19 @@ class Div : public Base {
                         divi = top + " / " + bot;
                         return divi;
                 }
+
+                Iterator* create_iterator(){
+                     Iterator* it = new BinaryIterator(this);
+                return it;
+        }
+
+        Base* get_left(){
+            return this->leftnode;
+        }
+
+        Base* get_right(){
+            return this->rightnode;
+        }
 
 };
 
