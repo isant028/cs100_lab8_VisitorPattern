@@ -4,8 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include <string.h>
-#include "iterator.hpp"
-#include "binary_iterator.cpp"
+//#include "iterator.hpp"
 class Add: public Base{
 	private:
 		double lef;
@@ -44,7 +43,8 @@ class Add: public Base{
         Base* get_right(){
             return this->rightnode;
         }
+
 };
 
 
-#endif
+#endif //ADD_HPP

@@ -4,6 +4,7 @@
 #include "base.hpp"
 #include <string>
 #include <string.h>
+//#include "iterator.hpp"
 class Sub: public Base{
 	private:
 		double lef;
@@ -15,6 +16,8 @@ class Sub: public Base{
 		std::string finals;
         public:
                 Sub(Base* left, Base* right) : Base(){
+                    leftnode = left;
+                    rightnode = right;
 			lef= left->evaluate();
 			rig = right->evaluate();
 			lefts = left->stringify();
@@ -29,7 +32,7 @@ class Sub: public Base{
                 }
 
             Iterator* create_iterator(){
-                     Iterator* it = new BinaryIterator(this);
+                Iterator* it = new BinaryIterator(this);
                 return it;
         }
 
@@ -43,4 +46,4 @@ class Sub: public Base{
 
 };
 
-#endif
+#endif //SUB_HPP

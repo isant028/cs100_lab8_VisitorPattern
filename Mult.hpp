@@ -11,8 +11,10 @@ class Mult : public Base {
     Base* rightnode;
    
         Mult(Base* test1,Base* test2) : Base() { 
+        leftnode = test1;
+        rightnode = test2;
         value1  = test1->evaluate();
-        value2  = test2 -> evaluate();
+        value2  = test2 ->evaluate();
         testfinal = value1 * value2;
 }
        virtual double evaluate()  {return testfinal;} 
@@ -20,7 +22,7 @@ class Mult : public Base {
         {return std::to_string(value1) + "*" + std::to_string(value2);}
 
         Iterator* create_iterator(){
-                     Iterator* it = new BinaryIterator(this);
+                Iterator* it = new BinaryIterator(this);
                 return it;
         }
 
